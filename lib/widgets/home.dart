@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:present_sir/model/subject.dart';
+import 'counter.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -18,6 +20,9 @@ class _HomeScreen extends State<HomeScreen> {
     super.dispose();
   }
 
+  List<Widget> generateCardList() => new List.generate(
+      Subjects.subjects.length, (i) => new Counter(Subjects.subjects[i]));
+
   @override
   Widget build(BuildContext context) {
     return new Center(
@@ -34,8 +39,7 @@ class _HomeScreen extends State<HomeScreen> {
           new Expanded(
             flex: 8,
             child: new ListView(
-              children: new List.generate(
-                  7, (i) => new Center(child: new Text('$i is good'))),
+              children: generateCardList()
             ),
           ),
         ],
