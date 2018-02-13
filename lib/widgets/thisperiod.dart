@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:present_sir/model/subject.dart';
 import 'package:intl/intl.dart';
+import 'package:present_sir/helper/colors.dart';
 
 class ThisPeriod extends StatelessWidget {
   final DateTime _time;
@@ -15,13 +16,17 @@ class ThisPeriod extends StatelessWidget {
     return new Card(
       child: new Center(
         child: new Container(
+          color: cBigCardBackground,
           child: new Column(
             children: <Widget>[
               new Row(
                 children: <Widget>[
                   new Expanded(flex: 1, child: new Text(_subject.teacher)),
                   new Expanded(
-                      flex: 2, child: new Text(_timeFormatter.format(_time))),
+                      flex: 2,
+                      child: new Container(
+                          color: cBigCardClockBackground,
+                          child: new Text(_timeFormatter.format(_time)))),
                   new Expanded(flex: 1, child: new Text(_subject.room))
                 ],
               ),
