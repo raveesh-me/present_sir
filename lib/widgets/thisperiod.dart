@@ -19,9 +19,10 @@ class ThisPeriod extends StatelessWidget {
             children: <Widget>[
               new Row(
                 children: <Widget>[
-                  new Text(_subject.teacher),
-                  new Text(_timeFormatter.format(_time)),
-                  new Text(_subject.room)
+                  new Expanded(flex: 1, child: new Text(_subject.teacher)),
+                  new Expanded(
+                      flex: 2, child: new Text(_timeFormatter.format(_time))),
+                  new Expanded(flex: 1, child: new Text(_subject.room))
                 ],
               ),
               new Expanded(
@@ -31,6 +32,7 @@ class ThisPeriod extends StatelessWidget {
               new Expanded(
                 flex: 1,
                 child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     new Text(
                         '${_subject.noOfClassesPresent}/${_subject.noOfClasses}'),
