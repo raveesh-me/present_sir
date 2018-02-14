@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:present_sir/model/subject.dart';
 import 'package:present_sir/helper/colors.dart';
 
+import 'package:present_sir/helper/styles.dart';
+
 class Counter extends StatefulWidget {
   final Subject _subject;
 
@@ -48,8 +50,8 @@ class _Counter extends State<Counter> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    new Text('[${_subject.code}]'),
-                    new Text(_subject.name)
+                    new Text('[${_subject.code}]',style: sSmallCardCode,),
+                    new Text(_subject.name,style: sSmallCardName,)
                   ],
                 ),
               ),
@@ -60,9 +62,9 @@ class _Counter extends State<Counter> {
                   child: new Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      new Text(_subject.noOfClassesPresent.toString()),
-                      new Text('---'),
-                      new Text(_subject.noOfClasses.toString()),
+                      new Text(_subject.noOfClassesPresent.toString(),style: sSmallCardPresent,),
+                      new Text('---',style: sSmallCardClasses),
+                      new Text(_subject.noOfClasses.toString(),style: sSmallCardClasses,),
                     ],
                   ),
                 ),
@@ -73,7 +75,7 @@ class _Counter extends State<Counter> {
                   decoration: new ShapeDecoration(
                       shape: new CircleBorder(), color: cSmallCardAbsentBG),
                   child: new MaterialButton(
-                    child: new Text('A'),
+                    child: new Text('A',style: sSmallCardButtonText,),
                     onPressed: _registerAbsent,
                   ),
                 ),
@@ -84,7 +86,7 @@ class _Counter extends State<Counter> {
                   decoration: new ShapeDecoration(
                       shape: new CircleBorder(), color: cSmallCardPresentBG),
                   child: new MaterialButton(
-                    child: new Text('P'),
+                    child: new Text('P',style: sSmallCardButtonText),
                     onPressed: _registerPresent,
                   ),
                 ),
