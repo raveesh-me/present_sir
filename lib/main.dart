@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       home: new Scaffold(
         appBar: new AppBar(
           backgroundColor: cAppBar ,
-          title: new Text('Present Sir!'),
+        title: new Text('Present Sir!',textAlign: TextAlign.center),
         ),
         body: new HomeScreen(),
       ),
