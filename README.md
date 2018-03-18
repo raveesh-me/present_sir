@@ -1,8 +1,8 @@
-# present_sir
-
-a beautiful attendance counter
+# Present Sir
+Present sir is a beautiful attendance counter written with Flutter SDK in Dart
 
 ## Getting Started
+We will be using this repository to help you write your own flutter apps
+The codebase was comitted in sprints, each sprint is repreented as a commit in the master branch
 
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+TODO: Make Sprints into branches.
